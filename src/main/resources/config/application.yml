@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost/sample?useSSL=false
+      username: root
+      password:
+      driverClassName: com.mysql.jdbc.Driver
+    secondary:
+      url: jdbc:db2://192.168.99.100:50000/sample
+      username: db2inst1
+      password: db2inst1
+      driverClassName: com.ibm.db2.jcc.DB2Driver
+  jpa:
+      hibernate:
+        ddl-auto: none
