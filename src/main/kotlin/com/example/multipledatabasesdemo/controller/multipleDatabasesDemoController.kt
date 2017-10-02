@@ -9,13 +9,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/")
-class multipleDatabasesDemoController {
-
-  @Autowired
-  lateinit var userService: UserService
-
-  @Autowired
-  lateinit var externalUserInfoService: ExternalUserInfoService
+class MultipleDatabasesDemoController @Autowired constructor(private val userService: UserService, private val externalUserInfoService: ExternalUserInfoService) {
 
   @GetMapping("/user")
   fun getUser(@RequestParam(value = "id") id: Int): User = userService.findById(id)
